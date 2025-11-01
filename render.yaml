@@ -10,3 +10,10 @@ services:
         sync: false
       - key: GITHUB_TOKEN
         sync: false
+  
+  - type: web
+    name: neurashield-frontend
+    env: static
+    plan: free
+    buildCommand: echo "Static site - no build needed"
+    staticPublishPath: ./webdev
