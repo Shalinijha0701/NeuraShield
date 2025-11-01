@@ -142,7 +142,7 @@ async function analyzeGitHub() {
     showProgress();
     
     try {
-        const response = await fetch('http://localhost:5050/api/analyze/github', {
+        const response = await fetch('https://neurashield.onrender.com/api/analyze/github', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -179,7 +179,7 @@ async function analyzeCode() {
     showProgress();
     
     try {
-        const response = await fetch('http://localhost:5050/api/analyze/code', {
+        const response = await fetch('https://neurashield.onrender.com/api/analyze/code', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ async function analyzeFile() {
     formData.append('file', file);
 
     try {
-        const response = await fetch('http://localhost:5050/api/analyze/file', {
+        const response = await fetch('https://neurashield.onrender.com/api/analyze/file', {
             method: 'POST',
             body: formData
         });
@@ -275,7 +275,7 @@ async function pollAnalysisStatus() {
         }
 
         try {
-            const response = await fetch(`http://localhost:5050/api/status/${currentJobId}`);
+
             const result = await response.json();
 
             if (result.status === 'completed') {
@@ -663,7 +663,7 @@ async function downloadReport(format) {
     try {
         if (currentJobId) {
             // Download from backend
-            window.open(`http://localhost:5050/api/download/${currentJobId}/${format}`, '_blank');
+            window.open(`https://neurashield.onrender.com/api/download/${currentJobId}/${format}`, '_blank');
         } else {
             // Generate client-side download
             generateClientSideReport(format);
