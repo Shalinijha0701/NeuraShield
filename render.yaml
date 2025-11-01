@@ -2,12 +2,11 @@ services:
   - type: web
     name: neurashield-api
     env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn solutions_api:app --bind 0.0.0.0:$PORT --timeout 120
+    startCommand: gunicorn solutions_api:app --bind 0.0.0.0:$PORT --timeout 120 --workers 1
     envVars:
       - key: OPENAI_API_KEY
         sync: false
       - key: GITHUB_TOKEN
         sync: false
-      - key: PYTHON_VERSION
-        value: 3.10.12
