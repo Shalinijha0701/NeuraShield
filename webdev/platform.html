@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Guide - NeuraShield</title>
+    <link rel="stylesheet" href="platform.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="home.html" class="nav-logo">🛡️ NeuraShield</a>
+            </div>
+            <div class="nav-center">
+                <a href="home.html#home" class="nav-link">Home</a>
+                <a href="platform.html" class="nav-link active">Platform</a>
+                <a href="solutions.html" class="nav-link">Solutions</a>
+                <a href="home.html#enterprise" class="nav-link">Enterprise</a>
+                <a href="home.html#resources" class="nav-link">Resources</a>
+            </div>
+            <div class="nav-right">
+                <a href="home.html" class="btn btn-primary">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Platform Guide</h1>
+            <p class="tagline">Step-by-step guide to using NeuraShield's automation features</p>
+            <p class="description">Learn how to automate pull requests, configure email notifications, and streamline your development workflow</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="container">
+            <div class="toc-card">
+                <h2>📋 Quick Navigation</h2>
+                <div class="toc-grid">
+                    <a href="#getting-started" class="toc-link">
+                        <span class="toc-icon">🚀</span>
+                        <span>Getting Started</span>
+                    </a>
+                    <a href="#pr-automation" class="toc-link">
+                        <span class="toc-icon">🔄</span>
+                        <span>PR Automation</span>
+                    </a>
+                    <a href="#email-config" class="toc-link">
+                        <span class="toc-icon">📧</span>
+                        <span>Email Notifications</span>
+                    </a>
+                    <a href="#advanced" class="toc-link">
+                        <span class="toc-icon">⚙️</span>
+                        <span>Advanced Features</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section id="getting-started" class="guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🚀 Getting Started</h2>
+                <p>Set up NeuraShield in minutes</p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="step-container">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Configure Environment Variables</h3>
+                    <p>Set up your API keys and configuration:</p>
+                    <div class="code-block">
+                        <code>git clone https://github.com/AaryaSoni-web/neurashield-ai.git 
+cd neurashield-ai
+pip install -r requirements.txt</code>
+                    </div>
+                     <div class="screenshot-placeholder">
+                        <div class="placeholder-icon"><img src="platform SS/step1.png" style="height:500px;"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="step-container">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Configure Environment Variables</h3>
+                    <p>Set up your API keys and configuration:</p>
+                    <div class="code-block">
+                        <code>export OPENAI_API_KEY="your-api-key"
+export GITHUB_TOKEN="your-github-token"
+Add Secrets to GitHub</code>
+                    </div>
+                     <div class="screenshot-placeholder">
+                        <div class="placeholder-icon"><img src="platform SS/step2.png" style="height:500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PR Automation -->
+    <section id="pr-automation" class="guide-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔄 Pull Request Automation</h2>
+                <p>Automate your code review workflow</p>
+            </div>
+             <!-- PR Step 1 -->
+            <div class="step-container">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Copy All Automation Files</h3>
+                    <p><b><em>(1) Copy the automation files from neurashield-ai to the root</em></b><br>
+cp -r neurashield-ai/.pre-commit-config.yaml .<br>
+cp -r neurashield-ai/.githooks .<br>
+cp -r neurashield-ai/.github .<br>
+cp neurashield-ai/.gitignore .<br>
+cp neurashield-ai/requirements.txt .<br>
+<b><em>(2) Commit & Push to GitHub</b></em><br>
+git add .pre-commit-config.yaml<br>
+git add .githooks/<br>
+git add .github/<br>
+git add .gitignore<br>
+git add requirements.txt<br>
+git commit -m "Add NeuraShield CI/CD automation"<br>
+git push origin main</p>
+                    <div class="screenshot-placeholder large">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: PR comment with analysis results</p>
+                        <div class="example-comment">
+                            <div class="comment-header">
+                                <strong>🛡️ NeuraShield Analysis</strong>
+                            </div>
+                            <div class="comment-body">
+                                <p><strong>Security Score:</strong> 8.5/10 🟡</p>
+                                <p><strong>Bugs Found:</strong> 2 (1 medium, 1 low)</p>
+                                <p><strong>Optimizations:</strong> 3 suggestions available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PR Step 2 -->
+            <div class="step-container">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Create a Pull Request</h3>
+                    <p>(1) Create and switch to new branch<br>
+Example, git checkout -b add-vulnerable-test-file<br>
+(2) Add the vulnerable file<br>
+Example, git add vulnerable_test.py<br>
+(3) Commit with descriptive message<br>
+Example, git commit -m "Add vulnerable_test.py"<br>
+(4) Push the new branch to GitHub<br>
+Example, git push -u origin add-vulnerable-test-file<br>
+(5) Create Pull Request on GitHub</p>
+                    <div class="feature-list">
+                        <div class="feature-item">✓ Code quality analysis</div>
+                        <div class="feature-item">✓ Security vulnerability scanning</div>
+                        <div class="feature-item">✓ Performance optimization suggestions</div>
+                        <div class="feature-item">✓ Automated test execution</div>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: New PR creation on GitHub</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PR Step 3 -->
+            <div class="step-container">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>View Automated Analysis</h3>
+                    <p>NeuraShield posts analysis results directly in the PR:</p>
+                    <div class="screenshot-placeholder large">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: PR comment with analysis results</p>
+                        <div class="example-comment">
+                            <div class="comment-header">
+                                <strong>🛡️ NeuraShield Analysis</strong>
+                            </div>
+                            <div class="comment-body">
+                                <p><strong>Security Score:</strong> 8.5/10 🟡</p>
+                                <p><strong>Bugs Found:</strong> 2 (1 medium, 1 low)</p>
+                                <p><strong>Optimizations:</strong> 3 suggestions available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PR Step 4 -->
+            <div class="step-container">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Automated Review Actions</h3>
+                    <p>Configure automatic actions based on analysis results:</p>
+                    <div class="code-block">
+                        odede># neurashield.yml configuration
+pr_automation:
+  auto_approve: security_score > 9.0
+  request_changes: bugs_found > 0
+  notify_team: security_score < 7.0</code>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Automated PR approval/rejection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Configuration -->
+    <section id="email-config" class="guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📧 Email Notification Setup</h2>
+                <p>Configure smart email alerts for your team</p>
+            </div>
+
+            <!-- Email Step 1 -->
+            <div class="step-container">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Configure Email Settings</h3>
+                    <p>Set up your SMTP server and email preferences:</p>
+                    <div class="code-block">
+                        <code># config/email.yml
+smtp:
+  server: smtp.gmail.com
+  port: 587
+  email: neurashield@yourcompany.com
+  use_tls: true
+  
+notifications:
+  send_on_pr_created: true
+  send_on_critical_issues: true
+  send_daily_summary: true</code>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Email configuration file</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Step 2 -->
+            <div class="step-container">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Set Up Team Members</h3>
+                    <p>Add team members and their notification preferences:</p>
+                    <div class="code-block">
+                        <code># config/team.yml
+team_members:
+  - name: "John Doe"
+    email: "john@company.com"
+    notify: [pr_created, security_critical]
+  - name: "Jane Smith"
+    email: "jane@company.com"
+    notify: [all]</code>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Team configuration interface</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Step 3 -->
+            <div class="step-container">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Email Templates</h3>
+                    <p>NeuraShield sends beautifully formatted emails:</p>
+                    <div class="screenshot-placeholder large">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Sample email notification</p>
+                        <div class="email-preview">
+                            <div class="email-header">
+                                <strong>Subject:</strong> [NeuraShield] New PR #123 Ready for Review
+                            </div>
+                            <div class="email-body">
+                                <h4>Pull Request Analysis Complete</h4>
+                                <p><strong>Repository:</strong> yourorg/yourrepo</p>
+                                <p><strong>PR:</strong> #123 - Add new feature</p>
+                                <hr>
+                                <p><strong>Security Score:</strong> 9.2/10 🟢</p>
+                                <p><strong>Issues Found:</strong> None</p>
+                                <p><strong>Status:</strong> ✅ Ready to merge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Step 4 -->
+            <div class="step-container">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Notification Types</h3>
+                    <p>Different email notifications for different events:</p>
+                    <div class="notification-types">
+                        <div class="notif-card">
+                            <h4>🔔 PR Created</h4>
+                            <p>Sent when a new pull request is opened</p>
+                        </div>
+                        <div class="notif-card">
+                            <h4>🚨 Critical Issues</h4>
+                            <p>Immediate alerts for security vulnerabilities</p>
+                        </div>
+                        <div class="notif-card">
+                            <h4>✅ Analysis Complete</h4>
+                            <p>Results of automated code analysis</p>
+                        </div>
+                        <div class="notif-card">
+                            <h4>📊 Daily Summary</h4>
+                            <p>End-of-day report with all activities</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Different email notification examples</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Features -->
+    <section id="advanced" class="guide-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>⚙️ Advanced Features</h2>
+                <p>Customize and extend NeuraShield</p>
+            </div>
+
+            <div class="advanced-grid">
+                <div class="advanced-card">
+                    <h3>🔌 Custom Integrations</h3>
+                    <p>Connect with Slack, Teams, or custom webhooks</p>
+                    <div class="code-block">
+                        odede>POST /api/webhook/custom
+{
+  "event": "pr_analysis_complete",
+  "callback_url": "https://your-service.com"
+}</code>
+                    </div>
+                </div>
+
+                <div class="advanced-card">
+                    <h3>📊 Analytics Dashboard</h3>
+                    <p>View team productivity and code quality metrics</p>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Analytics dashboard</p>
+                    </div>
+                </div>
+
+                <div class="advanced-card">
+                    <h3>🤖 Custom Rules</h3>
+                    <p>Define your own automation rules and policies</p>
+                    <div class="code-block">
+                        <code>rules:
+  - name: "Block on security"
+    condition: security_score < 7
+    action: block_merge</code>
+                    </div>
+                </div>
+
+                <div class="advanced-card">
+                    <h3>🔐 Security Policies</h3>
+                    <p>Enforce organization-wide security standards</p>
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-icon">📸</div>
+                        <p>Screenshot: Security policy configuration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>💡 Best Practices</h2>
+            </div>
+
+            <div class="best-practices-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">✅</div>
+                    <h4>Start Small</h4>
+                    <p>Begin with PR automation on a single repository before scaling to your entire organization</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🎯</div>
+                    <h4>Tune Thresholds</h4>
+                    <p>Adjust security score thresholds based on your team's needs and risk tolerance</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">📧</div>
+                    <h4>Manage Notifications</h4>
+                    <p>Configure notification preferences to avoid email fatigue while staying informed</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🔄</div>
+                    <h4>Review Regularly</h4>
+                    <p>Check analytics dashboard weekly to identify trends and optimization opportunities</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🛡️</div>
+                    <h4>Security First</h4>
+                    <p>Always enable critical security notifications for immediate action on vulnerabilities</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">📚</div>
+                    <h4>Document Custom Rules</h4>
+                    <p>Keep your automation rules documented and version controlled</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="home.html" class="footer-link">Privacy</a>
+                <a href="home.html" class="footer-link">Terms</a>
+                <a href="home.html" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 NeuraShield - Developer Automation Platform
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
