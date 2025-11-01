@@ -3,7 +3,7 @@ NeuraShield Solutions API
 Flask backend for code analysis - Updated for Real NeuraShield Integration
 """
 
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 import os
 import sys
@@ -29,7 +29,7 @@ except ImportError:
     NEURASHIELD_AVAILABLE = False
     print("Warning: NeuraShield modules not found. Running in demo mode.")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 CORS(app)  # Enable CORS for all routes
 
 # Configuration - Store outside webdev folder
@@ -519,6 +519,16 @@ END OF REPORT
 # All existing Flask routes remain the same
 @app.route('/')
 def index():
+    """Serve frontend"""
+    return send_from_directory('static', 'index.html')
+
+@app.route('/<path:filename>')
+def serve_static(filename):
+    """Serve static files"""
+    return send_from_directory('static', filename)
+
+@app.route('/api/')
+def api_root():
     """API root"""
     cleanup_expired_reports()  # Clean up old reports
     return jsonify({
