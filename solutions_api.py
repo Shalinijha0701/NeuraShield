@@ -725,9 +725,9 @@ def download_report(job_id, format):
 
 if __name__ == '__main__':
     print("""
-    ╔═══════════════════════════════════════╗
-    ║   NeuraShield Solutions API Server   ║
-    ╚═══════════════════════════════════════╝
+    ==========================================
+       NeuraShield Solutions API Server
+    ==========================================
     
     Server running at: http://localhost:5050
     NeuraShield Mode: {'ENABLED' if NEURASHIELD_AVAILABLE else 'DEMO MODE'}
@@ -740,4 +740,5 @@ if __name__ == '__main__':
     - GET  /api/download/<job_id>/<format>
     """)
     
-    app.run(debug=True, host='0.0.0.0', port=5050)
+    port = int(os.environ.get('PORT', 5050))
+    app.run(debug=False, host='0.0.0.0', port=port)

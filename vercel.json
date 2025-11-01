@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "solutions_api.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "webdev/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "solutions_api.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "webdev/$1"
+    }
+  ]
+}
