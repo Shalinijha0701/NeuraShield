@@ -520,17 +520,20 @@ END OF REPORT
 @app.route('/')
 def index():
     """Serve frontend"""
-    return send_from_directory('static', 'index.html')
-
-@app.route('/<path:filename>')
-def serve_static(filename):
-    """Serve static files"""
-    return send_from_directory('static', filename)
+    try:
+        return send_from_directory('static', 'index.html')
+    except:
+        return jsonify({
+            'message': 'NeuraShield Solutions API',
+            'version': '1.0.0',
+            'status': 'running',
+            'neurashield_enabled': NEURASHIELD_AVAILABLE
+        })
 
 @app.route('/api/')
 def api_root():
     """API root"""
-    cleanup_expired_reports()  # Clean up old reports
+    cleanup_expired_reports()
     return jsonify({
         'message': 'NeuraShield Solutions API',
         'version': '1.0.0',
